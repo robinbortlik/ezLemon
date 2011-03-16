@@ -1,0 +1,230 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  
+  back: Back
+  confirmation_question: Are you sure?
+  comments: Comments
+  destroy: Delete
+  edit: Edit
+  new: New
+  pupils: Pupils
+  teachers: Teachers
+  scribd_terms: Scribd's General Terms of Use
+  scribd_policity: and Privacy Policity
+  show: Show
+  cancel: Cancel
+  save: Save
+  call: Call to Skype
+  who_will_come: Who will come
+
+
+  layouts:
+    application:
+      logo_title: "ezLemon"
+
+  application:
+    index:
+      title: ezLemon
+      head_title: "Active teaching of foreign languages"
+      meta_description: "ezLemon is internet application which allow you to learn foreign languages with native speakers. "
+    unlogged_user:
+      box1:
+        title: Power of community
+        community_text: Looking for some advice, how to learn languages effective? Try our forums.
+        comment_text: You can comment users videos and documents and help creators to improve.
+      box2:
+        title: Study resources
+        video_text: Teach another users with your video, or watch some.
+        document_text: Don't understand some grammar? Try our document database.
+      box3:
+        title: Active learning
+        excercise_text: Try our excercises to review your language skills.
+        skype_meeting_text: The best way how to learn languages is speaking. Try it, it is free.
+      we_will_help_you: We will help You
+      to_understand_world: to understand the world
+      masaryk_university: Masaryk University
+      silesian_university: Silesian University
+      latest_activity: Latest Activity
+      more: more
+      who_support_us: Who support us?
+      application_description: <strong>ezLemon</strong> is internet application which allow you to <strong>learn foreign languages with native speakers</strong>.
+      community: Forums
+      skype_meetings: Skype meetings
+      which_languages: Which languages are learning now?
+    logged_user:
+      slidenote:
+        title: "Hi, please complete this steps before using application:"
+        fill_name: "Fill your skype name"
+        fill_teaching_languages: Fill languages you can teach another users
+        fill_learning_languages: Fill languages you would like to learn
+        fill_pupils: Select your pupils
+        fill_teachers: Select your teachers
+      
+    about_project:
+        title: About Project
+        facebook: Facebook
+        facebook_title: Facebook page
+        email: Email
+        twitter: Twitter
+        about_robin_headline: Hi, all
+        about_robin_text: "My name is <strong>Robin Bortlík</strong> and I come from the <strong>%{czech_republic}</strong>.
+        ezLemon is my <strong>bachelor project</strong>, which can help you to <strong>learn foreign language</strong>.<br />
+        You can simply speak with someone from another country through skype or teach someone with our excercises.<br />
+        And if you are not looking for someone who would learn with you? Then you can just read documents or watch videos.<br />
+        The last thing I would like to say is <strong>Enjoy It</strong>.<br />
+        <br />
+        Special thanks to <strong>Klárka</strong>, my <strong>family</strong>,  my <strong>friends</strong> %{hubert_frey}, %{tomas_pavelka}, %{martin_hladil}, %{roman_ozana}, Ivo Slavík, Marek Polášek and companies %{railsformers}, %{omdesign}"
+        czech_republic: Czech Republic
+        university_of_ostrava: University of Ostrava
+        meta_description: "Description how was project ezLemon found"
+    latest_activity:
+      title: Latest activity
+      meta_description: "Latest users activity in ezLemon application"
+    wall_of_fame:
+      title: Wall of fame
+      text: This page is a thank's to everyone who helped in some way to improve this application. <br /> Did not find you? <br /> Try to give us some idea or comment and help us to make ezLemon better. Then we would like to put your photo on this page.
+      meta_description: "Thank's to all users who helped improve ezLemon application"
+
+  activity:
+    create: created
+    comment: commented
+    update: update
+    forum_post: posted on 
+    
+  documents:
+    index:
+      title: Documents
+      new: New document
+      no_objects: There are no documents for your languages
+    new:
+      title: New document
+
+  excercises:
+    index:
+      title: Excercises
+      new: New excercise
+      no_objects: You didn't create any excercise yet
+    new:
+      title: New excercise
+    edit:
+      title: Edit excercise
+    form:
+      preview: Preview
+    show:
+      results: Results
+    select_type:
+      dialog_title: Select excercise type
+    select_type_content:
+      question: Who will do this excercise?
+      private: It is for me
+      for_pupils: It is for my pupils
+    move_word: "Move this words to the right position: "
+    types:
+      "1": Fill gaps
+      "2": Translation
+
+  excercises_results:
+    edit:
+      title: Excercise
+      reload_excercise: Try it once more
+      mistakes: Mistakes
+    excercises_result:
+      mistakes: Mistakes
+  forums:
+    index:
+      title: Forums
+      new: New forum
+    new:
+      title: New forum
+    edit:
+      title: Edit forum
+
+  forum_topics:
+    index:
+      title: Forum topics
+      new: New forum topic
+      no_objects: This forum include no topics
+    new:
+      title: New forum topic
+    edit:
+      title: Edit forum topic
+
+  forum_posts:
+    index:
+      title: Forum posts
+      new: New forum post
+      no_objects: This forum topic include no posts
+    new:
+      title: New forum post
+    edit:
+      title: Edit forum post
+
+  meetings:
+    index:
+      title: Meetings
+      today: Today
+      new_event: New Skype meeting
+    new:
+      title: New meeting
+    edit:
+      title: Edit meeting
+    show:
+      title: Meeting detail
+      attending: Attending
+      not_attending: Not Attending
+      
+  messages:
+    index:
+      title: Messages
+    inbox:
+      title: Inbox
+      no_messages: You have no messages
+      compose: Compose
+    sent:
+      title: Sent
+      no_messages: You sent nothing
+    new:
+      title: New message
+
+  pupils:
+    index:
+      title: Pupils
+      sentence_1: Pupils filtered by language(s)
+      like_speak: "Like speak about: "
+      no_objects: There are no pupils for your language setting
+    form:
+      destroy_confirm: Are you sure?
+      select_language: Select languages you would like to teach user
+    languages:
+      title: Languages I can teach user
+      
+  teachers:
+    index:
+      title: Teachers
+      sentence_1: Teachers filtered by language(s)
+      like_speak: "Like speak about: "
+      no_objects: There are no teachers for your language setting
+    form:
+      destroy_confirm: Are you sure?
+      select_language: Select languages you would like to learn with user
+    languages:
+      title: Languages I can learn
+
+  translator:
+    index:
+      title: Translator
+    form:
+      translation: Translation
+      submit: Translate
+
+  videos:
+    index:
+      title: Videos
+      new: New video
+      no_objects: There are no videos for your languages
+    new:
+      title: New video
+    form:
+      video_url: Url from Youtube or Vimeo

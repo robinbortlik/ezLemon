@@ -1,0 +1,17 @@
+<div id="teachers-language-form">
+  <h3><%= t(".select_language") %></h3>
+  <% @user.teaching_languages.each do |language| %>
+    <% pupils_teacher = current_user.pupils_teachers.where({:teacher_id => @user, :language_id => language}).limit(1).all.first %>
+    <% unless pupils_teacher %>
+      <%= label_tag("language_#{language.id}", language.to_s) %>
+      <%= check_box_tag("language_#{language.id}", language.id, false, 
+        {:"data-url" => teachers_path(:pupils_teacher => {:teacher_id => @user, :language_id => language}, :format => :js),
+        :"data-method" => :post})
+    %>
+    <% else %>
+      <%= label_tag("language_#{language.id}", language.to_s) %>
+      <%= check_box_tag("language_#{language.id}", language.id, true,
+        {:"data-url" => teacher_path(pupils_teacher, :format => :js), :"data-method" => :delete}) %>
+    <% end %>
+  <% end %>
+</div>

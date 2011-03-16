@@ -1,0 +1,12 @@
+en:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} was successfully created.'
+      update:
+        notice: '%{resource_name} was successfully updated.'
+      destroy:
+        notice: '%{resource_name} was successfully destroyed.'
+        alert: '%{resource_name} could not be destroyed.'
+      translate:
+        error: 'We are very sorry, but the translation was not successfull. Probably this languages combination is not available.'

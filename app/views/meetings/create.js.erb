@@ -1,0 +1,6 @@
+<% if @meeting.persisted? %>
+  $( "#ui-dialog" ).dialog('close');
+  $('#meeting-calendar').weekCalendar('refresh');
+<% else %>
+  $( "#ui-dialog" ).html('<%= escape_javascript(render :partial => 'form') %>')
+<% end %>

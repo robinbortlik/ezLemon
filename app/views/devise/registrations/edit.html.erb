@@ -1,0 +1,52 @@
+<h2><%= t(:'.settings') %></h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
+  <div id="profile-tabs" class="clearfix">
+    <ul>
+      <li><a href="#tabs-1"><%= t('.personal') %></a></li>
+      <li><a href="#tabs-2"><%= t('.languages') %></a></li>
+      <li><a href="#tabs-3"><%= t('.password') %></a></li>
+      <li><a href="#tabs-4"><%= t('.avatar') %></a></li>
+
+    </ul>
+    <div id="tabs-1" class="float-left">
+      <%= f.input :email %>
+      <%= f.input :name %>
+      <%= f.input :skype_name, :hint => t(".skype_hint", :url => link_to("Skype", "https://support.skype.com/en/faq/FA605/How-do-I-show-my-Skype-status-on-the-web?frompage=search&q=web+status&fromSearchFirstPage=true", :"data-popup" => true)).html_safe %>
+      <%= f.input :interests, :as => :text, :input_html => {:size => "40x5"} %>
+      <%= f.input :application_language_code, :collection => Language.application.collect{|l| [l, l.code.to_s.upcase]} %>
+      <%= f.input :time_zone %>
+    </div>
+    <div id="tabs-2" class="float-left">
+      <%= f.association :learning_languages, :input_html => {:class => "multiselect", :multiple => true, :size => 10 } %>
+      <%= f.association :teaching_languages, :input_html => {:class => "multiselect", :multiple => true, :size => 10} %>
+    </div>
+    <div id="tabs-3" class="float-left">
+      <%= f.input :password, :input_html => {:autocomplete => :off}, :hint => t(:'.password_instruction') %>
+      <%= f.input :password_confirmation, :input_html => {:autocomplete => :off} %>
+    </div>
+    <div id="tabs-4" class="float-left">
+      <%= f.input :avatar, :as => :file %>
+    </div>
+
+  </div>
+  <%#= f.input :current_password, :input_html => {:autocomplete => :off} %>
+<%= f.hidden_field :profile_tab %>
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<div id="devise_shared_links">
+  <%= link_to t(:'.cancel_my_account'), registration_path(resource_name), :confirm => t("confirmation_question"), :method => :delete %>.
+</div>
+<%= multiselect_js %>
+
+<script type="text/javascript">
+  $(function() {
+    $( "#profile-tabs" ).tabs({
+      select: function(event, ui) { $("#user_profile_tab").attr("value", ui.index); return true},
+      selected: '<%= params[:tab] || resource.profile_tab %>'
+    });
+  });
+</script>

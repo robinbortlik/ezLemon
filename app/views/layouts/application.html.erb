@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ezLemon<%= yield(:head_title) %></title>
+    <meta name="description" content="<%= yield(:meta_description) %>" />
+    <meta http-equiv="Content-language" content="<%= I18n.locale.downcase %>" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="Robin Bortlík" />
+    <%= stylesheet_link_tag "aristo/jquery-ui-1.8.5.custom" %>
+    <%= stylesheet_link_tag :all %>
+
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+
+    <% if Rails.env.production? %>
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-12845296-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+      </script>
+    <% end %>
+  </head>
+  <body>
+    <div id="top-container">
+      <div id="top-container-content">
+        <h2 class="headline"><%= link_to("ezLemon", root_path) %></h2><span id="beta">(beta)</span>
+        <% if user_signed_in? %>
+          <ul>
+            <li><%= link_to t("devise.sign_out"), destroy_user_session_path %></li>
+            <% if false %><li><%= select_tag(:locale, options_for_select(Language.all.collect{|l| [l.to_s, l.code]})) %></li><% end %>
+          </ul>
+        <% else %>
+          <div id="locales">
+            <% Language.application.each do |lang| %>
+              <%= link_to(image_tag("locales/#{lang.code.downcase}.png"), url_for(:locale => lang.code.downcase), :title => lang) %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="middle-container">
+      <div id="middle-container-content" class="clearfix">
+        <% if user_signed_in? %>
+          <% if current_page?([:meetings]) %>
+            <%= render :partial => 'layouts/meetings_container' %>
+          <% else %>
+            <%= render :partial => 'layouts/logged_user_container' %>
+          <% end %>
+        <% else %>
+          <%= render :partial => 'layouts/unlogged_user_container' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="bottom-container">
+      <div id="bottom-container-content">
+        Copyright &copy; <%= Date.today.year %>
+      </div>
+    </div>
+    <div id="ui-dialog"></div>
+  </body>
+</html>
+
+
+
+

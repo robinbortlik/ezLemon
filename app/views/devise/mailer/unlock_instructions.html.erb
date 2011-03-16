@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <div style="background-color: #F5F5F5; padding: 20px; width:530px;">
+      <a href="http://www.ezlemon.com"><img src="<%= 'http://ezlemon.heroku.com/images/email-header.png'%>" style="border:none; display:block;" alt="ezLemon"></img></a>
+      <div style="background:#FFFFFF; width:505px; height: 300px; border:1px #000000 dashed; padding:10px; border-top:none;">
+        <p style="margin:0;"><strong><%= t(:'devise.mailer.unlock.title', :email => @resource.email) %></strong></p>
+        <p style="margin:0;"><%= t(:'devise.mailer.unlock.description') %></p><br /><br />
+        <p style="margin:0;"><%= link_to t(:'devise.mailer.unlock.link'), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<ul id="user-menu">
+  <li><%= link_to t('application.index.title'), root_path %></li>
+  <li><%= link_to t("devise.sessions.new.sign_in"), new_user_session_path %></li>
+  <li><%= link_to t("devise.registrations.new.sign_up"), new_user_registration_path %></li>
+  <li><%= link_to t("application.about_project.title"), about_project_path %></li>
+  <li><%= link_to t("application.wall_of_fame.title"), wall_of_fame_path %></li>
+</ul>
+<%= flash_messages %>
+<%= yield %>
+
+<script type="text/javascript" charset="utf-8">
+<% unless session[:timezone_offset] %>
+    $.ajax({
+      url: '/ajax_timezone',
+      type: 'GET',
+      data: { offset: (new Date()).getTimezoneOffset() }
+    });
+<% end %>
+</script>

@@ -1,0 +1,13 @@
+<%= form_tag translate_path, :remote => :true do %>
+  <div class="clearfix">
+    <%= text_area_tag("text", @text, :size => "70x5") %><br />
+    <% from_languages = @translator.supported_languages[:from_languages].collect{|lang| [Language.language_name_from_code(lang.code.upcase), lang.code]} %>
+    <% to_languages = @translator.supported_languages[:to_languages].collect{|lang| [Language.language_name_from_code(lang.code.upcase), lang.code]} %>
+    <%= select_tag(:from, options_for_select(from_languages.keep_if{|lang| !lang.first.blank?}.sort_alphabetical)) %>&nbsp;&nbsp;=> &nbsp;&nbsp;
+    <%= select_tag(:to, options_for_select(to_languages.keep_if{|lang| !lang.first.blank?}.sort_alphabetical)) %>
+    <%= submit_tag(t(".submit")) %>
+  </div>
+<br />
+<strong><%= t(".translation") %></strong>
+  <div class="clearfix"  id="translated-text" style="overflow:auto"></div>
+<% end %>

@@ -1,0 +1,29 @@
+<%= simple_form_for(resource) do |f| %>
+  <div class="inputs">
+    <%= f.association :language, :collection => Language.available_excercise.sorted_languages, :input_html => {:class => "update-on-change"} %>
+
+    <%= f.input :excercise_type, :collection => Excercise::EXCERCISE_TYPES.collect{|et| [t(et.first.to_s, :scope => [:excercises, :types]), et.first]}, :input_html => {:class => "update-on-change"} %>
+
+    <%= f.input(:pupils, :collection => current_user.pupils, :input_html => {:class => "multiselect", :multiple => true, :size => 10 }, :label_method => "to_s") unless resource.is_private? %>
+    <div class="hidden">
+      <%= f.input :text %>
+      <%= f.input :generated %>
+      <%= f.input :is_private %>
+    </div>
+  </div>
+
+<h3><%= t(".preview") %></h3>
+  <div id="excercise-preview">
+    <%= CGI.unescapeHTML(resource.generated.to_s.html_safe) %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+<%= multiselect_js %>
+
+<script type="text/javascript">
+  updateExcercisePreview('<%= excercises_update_preview_path %>');
+  initFillGaps();
+</script>

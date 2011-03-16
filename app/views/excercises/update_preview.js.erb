@@ -1,0 +1,4 @@
+jQuery('#excercise-preview').html("<%=  render :inline => @excercise.generated.to_s.gsub('"', '\\"') %>");
+jQuery('#excercise_generated').val("<%= @excercise.generated.to_s %>");
+jQuery('#excercise_text').val("<%= @excercise.text.to_s %>");
+initFillGaps();

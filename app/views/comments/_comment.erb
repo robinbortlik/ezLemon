@@ -1,0 +1,12 @@
+<div class="comment-container clear">
+  <div class="float-left comment-autor">
+    <%= image_tag(comment.creator.small_avatar_url) %> <br />
+    <span><%= l comment.created_at.to_date, :format => :short %></span>
+    <br />
+    <span><%= comment.creator %></span>
+  </div>
+  <div class="float-left <%= comment_counter % 2 == 0 ? 'yellow-border' : 'green-border' %> comment-content ">
+    <%= comment.comment %>
+  </div>
+</div>
+<br />

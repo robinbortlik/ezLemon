@@ -1,0 +1,37 @@
+<h1><%= t(".title") %></h1>
+<%= form_for(resource) do |f| %>
+  <%= link_to_function(icon('arrow-refresh') + t('.reload_excercise'), "reloadExcercise()") %>
+  <% unless !resource.result.blank? %>
+    <div class="clearfix" id="result-container">
+      <%= CGI.unescapeHTML(resource.excercise.generated).html_safe %>
+    </div>
+
+    <% if resource.excercise.excercise_type == 2 %>
+      <div class="clearfix">
+        <%= f.text_area :result, :size => "90x20" %>
+      </div>
+    <% end %>
+
+    <%= f.submit  %>
+  <% end %>
+
+  <% if resource.excercise.excercise_type == 1 %>
+    <%= f.text_area :result, :class => "hidden" %>
+  <% end %>
+<% end %>
+<% if resource.is_finished? && !resource.result.blank? %>
+  <%= CGI.unescapeHTML(resource.result).html_safe %>
+<% end %>
+<% if resource.mistakes_count  %>
+  <div class="float-right"><%= t('.mistakes') %>: <%= resource.mistakes_count %></div>
+<% end %>
+
+<% if !resource.excercise.is_private? %>
+  <%= render :partial => 'comments/comments', :locals => {:commentable => resource} %>
+<% end %>
+
+<% if resource.excercise.excercise_type == 1 %>
+  <script type="text/javascript">
+    initFillGaps();
+  </script>
+<% end %>

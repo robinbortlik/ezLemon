@@ -1,0 +1,60 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cs:
+  home:
+    name: "domů"
+  admin:
+    dashboard:
+      pagename: "Administrace stránek"
+      name: "Stěna"
+      model_name: "Jméno modelu"
+      last_used: "Naposled upravil"
+      records: "Záznamy"
+      modify: "Upravil"
+      add_new: "Přidat nový"
+      show: "Zobrazit"
+      ago: "před"
+    history:
+      name: "Historie"
+      page_name: "Hostorie pro %{name}"
+      no_activity: "Bez aktivity"
+    credentials:
+      log_out: "Odhlásit"
+    list:
+      edit_action: "Upravit"
+      delete_action: "Smazat"
+      add_new: "Přidat nový"
+      search_btn: "Vyhledat"
+      select: "Vybrat %{name} pro úpravu"
+      show_all: "Zobrazit vše"
+      delete_selected: Smazat vybrané
+      select_action: Vybrat
+    new:
+      basic_info: "Základní info"
+      required: "Požadován"
+      optional: "Volitelný"
+      one_char: "znak."
+      many_chars: "více znaků."
+      chosen: "Vybraný %{name}"
+      select_choice: "Vybrete svou volbu(y) a klikněte"
+      chose_all: "Vybrat všechny"
+      clear_all: "Smazat všechny"
+      save: "Uložit"
+      save_and_add_another: "Uložit a přidat další"
+      save_and_edit: "Uložit a upravit"
+      cancel: "Zrušit"
+    delete:
+      flash_confirmation: "%{name} byl úspěšně zmazán"
+      confirmation: "Jste si jist?"
+    flash:
+      successful: "%{name} byl úspěšně %{action}"
+      error: "%{name} nebyl %{action}"
+      noaction: "Nebyla vybrána žádná akce"
+    actions:
+      create: "vytvořit"
+      created: "vytvořen"
+      update: "upravit"
+      updated: "upraven"
+      delete: "smazat"
+      deleted: "smazán"

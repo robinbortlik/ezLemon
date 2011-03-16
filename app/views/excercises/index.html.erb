@@ -1,0 +1,29 @@
+<h1><%= t(".title") %></h1>
+<div class="clearfix">
+  <%= link_to(t(".new"), [:excercises, :select_type], :remote => true, :class => 'float-left new-item-link') %>
+</div>
+<% if collection.any? %>
+  <ul class="statuses">
+    <% collection.each do |resource| %>
+      <li>
+        <div class='tweetTxt'>
+          <strong>
+            <% if result = resource.excercises_results.where(:pupil_id => current_user).limit(1).first %>
+              <%= link_to(resource, [:edit, result]) %>
+            <% else %>
+              <%= link_to(resource, resource) %>
+            <% end %>
+          </strong>
+          <div class='date'>
+          </div>
+        </div>
+        <div class='clearfix'></div>
+      </li>
+    <% end %>
+  </ul>
+  <%= will_paginate %>
+<% else %>
+  <div class="no-objects margin-top">
+    <%= t(".no_objects") %>
+  </div>
+<% end %>

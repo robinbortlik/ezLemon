@@ -1,0 +1,6 @@
+one:
+  email: email@email.com
+  name: Robin
+  application_language_code: 'cs'
+  time_zone: 'Prague'
+  

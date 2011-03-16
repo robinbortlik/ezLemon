@@ -1,0 +1,9 @@
+<%= show_for resource do |o| %>
+  <%= o.attribute :title %>
+  <%= o.association :forum %>
+  <%= o.association :creator %>
+  <%= o.association :last_post_by %>
+  <%= o.attribute :last_post_at %>
+<% end %>
+
+<%= link_to t(:back), collection_path %>

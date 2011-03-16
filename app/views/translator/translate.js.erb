@@ -1,0 +1,4 @@
+<% if @translated_text %>
+  $("#translated-text" ).html('<%= escape_javascript(HTMLEntities.new.decode(@translated_text)) %>')
+<% end %>
+

@@ -1,0 +1,7 @@
+<p class="center">
+  <%= t(".question") %>
+</p>
+<p>
+  <%= link_to t(".private"), new_excercise_path(:excercise => {:is_private => true}), :class => "float-left new-item-link" %>
+  <%= link_to t(".for_pupils"), new_excercise_path, :class => "float-right new-item-link" %>
+</p>

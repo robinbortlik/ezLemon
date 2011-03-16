@@ -1,0 +1,8 @@
+<% if @comment.persisted?
+  @comment = @comment.commentable.comments.new
+%>
+  jQuery('#comments-list').html('<%= escape_javascript render(:partial => 'comments/comment', :collection => @comment.commentable.comments) %>');
+  jQuery('#comment-form').html('<%=  escape_javascript render(:partial => 'comments/new') %>');
+<% else %>
+  jQuery('#comment-form').html('<%= escape_javascript render(:partial => 'comments/new') %>');
+<% end %>

@@ -1,0 +1,12 @@
+<div class="clear">
+  <h2><%= t(:comments) %></h2>
+  <% if user_signed_in? %>
+    <div id="comment-form">
+      <%= render :partial => 'comments/new', :locals => {:commentable => commentable} %>
+    </div>
+  <% end %>
+
+  <div id="comments-list">
+    <%= render :partial => 'comments/comment', :collection => commentable.comments %>
+  </div>
+</div>

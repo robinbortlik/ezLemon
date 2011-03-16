@@ -1,0 +1,10 @@
+<% simple_form_for(resource) do |f| %>
+  <div class="inputs">
+    <%= f.input :title %>
+    <%= f.association :language %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,50 @@
+/* 
+	Silk Sprites
+	http://xheo.com/silk?icons=0,1,8,50,62,63,64,65,66,67,68,69,70,71,92,94,102,246,247,324,369,377,472,514,544,553,554,555,556,557,558,559,560,563,564,629,840,893,956,958,966&size=16
+*/
+
+.ui-silk { width: 16px; height: 16px; display:block; background: transparent url(/images/icons/silk-sprite.png?634255319680850635) no-repeat; text-indent: -99999px; overflow: hidden; }
+.ui-silk.gray, .ui-silk.gray, .ui-silk.hover { background-image: url(/images/icons/silk-sprite-gray.png?634255319680850635); }
+*.ui-silk.inline{ display: inline-block; vertical-align: middle; border: 0; outline: 0; }
+
+.ui-silk.hover:hover{background-image: url(/images/icons/silk-sprite.png?634255319680850635);}.ui-silk-accept { background-position: -0px -0px }
+.ui-silk-add { background-position: -16px -0px }
+.ui-silk-application-edit { background-position: -32px -0px }
+.ui-silk-arrow-refresh { background-position: -48px -0px }
+.ui-silk-attach { background-position: -64px -0px }
+.ui-silk-award-star-add { background-position: -80px -0px }
+.ui-silk-award-star-bronze-1 { background-position: -96px -0px }
+.ui-silk-award-star-bronze-2 { background-position: -112px -0px }
+.ui-silk-award-star-bronze-3 { background-position: -128px -0px }
+.ui-silk-award-star-delete { background-position: -144px -0px }
+.ui-silk-award-star-gold-1 { background-position: -160px -0px }
+.ui-silk-award-star-gold-2 { background-position: -176px -0px }
+.ui-silk-award-star-gold-3 { background-position: -192px -0px }
+.ui-silk-award-star-silver-1 { background-position: -208px -0px }
+.ui-silk-book { background-position: -224px -0px }
+.ui-silk-book-addresses { background-position: -240px -0px }
+.ui-silk-book-open { background-position: -256px -0px }
+.ui-silk-comment { background-position: -272px -0px }
+.ui-silk-comments { background-position: -288px -0px }
+.ui-silk-date { background-position: -304px -0px }
+.ui-silk-email { background-position: -320px -0px }
+.ui-silk-email-open { background-position: -336px -0px }
+.ui-silk-house { background-position: -352px -0px }
+.ui-silk-lightbulb { background-position: -368px -0px }
+.ui-silk-magnifier { background-position: -384px -0px }
+.ui-silk-medal-bronze-1 { background-position: -400px -0px }
+.ui-silk-medal-bronze-2 { background-position: -416px -0px }
+.ui-silk-medal-bronze-3 { background-position: -432px -0px }
+.ui-silk-medal-bronze-add { background-position: -448px -0px }
+.ui-silk-medal-bronze-delete { background-position: -464px -0px }
+.ui-silk-medal-gold-1 { background-position: -480px -0px }
+.ui-silk-medal-gold-2 { background-position: -496px -0px }
+.ui-silk-medal-gold-3 { background-position: -0px -16px }
+.ui-silk-medal-silver-1 { background-position: -16px -16px }
+.ui-silk-medal-silver-2 { background-position: -32px -16px }
+.ui-silk-page-white-acrobat { background-position: -48px -16px }
+.ui-silk-star { background-position: -64px -16px }
+.ui-silk-television { background-position: -80px -16px }
+.ui-silk-user-comment { background-position: -96px -16px }
+.ui-silk-user-edit { background-position: -112px -16px }
+.ui-silk-vcard { background-position: -128px -16px }

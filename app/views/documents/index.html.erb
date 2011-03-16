@@ -1,0 +1,19 @@
+<h1><%= t(".title") %></h1>
+<div class="clearfix">
+  <%= link_to(t(".new"), new_resource_path, :class => 'float-left new-item-link') if user_signed_in? %>
+</div>
+
+<% if collection.any? %>
+  <ul class="document-list">
+    <% collection.each_slice(3) do |documents| %>
+      <li class="clearfix">
+        <%= render(documents) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= will_paginate %>
+<% else %>
+  <div class="no-objects margin-top">
+    <%= t(".no_objects") %>
+  </div>
+<% end %>

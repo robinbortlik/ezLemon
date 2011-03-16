@@ -1,0 +1,23 @@
+<div id="location_selector" class="float-right">
+  <%= radio_button_tag('location','inbox', params[:mailbox].nil? || params[:mailbox] == "inbox",  :"href-data" => messages_path(:mailbox => :inbox), :class => 'radio') %>
+  <%= label_tag('location_inbox', t("messages.inbox.title")) %>
+  <%= radio_button_tag('location', 'sent', params[:mailbox] == "sent", :"href-data" => messages_path(:mailbox => :sent), :class => 'radio') %>
+  <%= label_tag('location_sent', t("messages.sent.title")) %>
+</div>
+
+
+<% if params[:mailbox] == "sent" %>
+  <div class="clearfix"></div>
+  <%= render :partial => "sent" %>
+<% else %>
+  <%= render :partial => "inbox" %>
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $( "#location_selector" ).buttonset();
+    $(".radio").live('click', function(){
+      window.location = $(this).attr('href-data');
+    })
+  });
+</script>

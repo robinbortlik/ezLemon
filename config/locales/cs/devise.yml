@@ -1,0 +1,85 @@
+cs:
+  errors:
+    messages:
+      not_found: "nenalezen"
+      already_confirmed: "byl již potvrzen"
+      not_locked: "nebyl uzamčen"
+
+  devise:
+    failure:
+      unauthenticated: 'Nejdříve se musíte přihlásit nebo registrovat.'
+      unconfirmed: 'Nejdříve se musíte potvrdit váš účet.'
+      invalid: 'Nesprávný e-mail nebo heslo.'
+      inactive: 'Váš účet doposud nebyl potvrzen.'
+      locked: 'Váš účet byl uzamčen'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Platnost vašeho přihlášení vypršela. Prosím přihlašte se znovu.'
+    sessions:
+      signed_in: 'Úspešně přihlášen.'
+      signed_out: 'Úspešně odhlášen.'
+      'new':
+        sign_in: "Přihlásit"
+        meta_description: "Přihlášení do aplikace ezLemon"
+    passwords:
+      send_instructions: 'E-mail s instrukcemi k obnovení hesla obdržíte během několika minut.'
+      updated: 'Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen.'
+      edit:
+        change_your_password: "Změnit vaše heslo"
+        change_my_password: "Změnit svoje heslo"
+      'new':
+        send_me_reset_password_instructions: "Zaslat instrukce k obnově hesla"
+        forgot_your_password?: "Zapomněli jste heslo?"
+    confirmations:
+      send_instructions: 'E-mail s instrukcemi k potvrzení vašeho účtu hesla obdržíte během několika minut.'
+      confirmed: 'Váš účet byl úspěšně potvrzen. Nyní jste přihlášen.'
+      'new':
+        resend_confirmation_instructions: "Znovu odeslat instrukce k potvrzení účtu"
+    registrations:
+      signed_up: 'Úspěšně jste se zaregistrovali. Děkujeme.'
+      updated: 'Váš účet byl úspěšně upraven.'
+      destroyed: 'Nashledanou! Váš účet byl zrušen. Doufáme že se brzy opět vrátíte.'
+      'new':
+        sign_up: "Registrovat"
+        meta_description: "Registrace do aplikace ezLemon"
+      edit:
+        settings: "Můj účet"
+        cancel_my_account: "Zrušit můj účet"
+        password_instruction: "ponechte prázdné pokud nechcete změnit"
+        current_password_instruction: "zadejte prosím své heslo pro potvrzení změn"
+        password: Heslo
+        avatar: Obrázek
+        languages: Jazyky
+        personal: Osobní informace
+        skype_hint: Prosím, nastavte si v aplikaci %{url} zobrazování stavu na webu
+    unlocks:
+      send_instructions: 'Za pár minut obdržíte e-mail s instrukcemi jak si odemknout svůj účet.'
+      unlocked: 'Váš účet byl úspěšně odemknut. Nyní jste přihlášeni.'
+      'new':
+        resend_unlock_instructions: "Znovu zaslat instrukce k odemčení účtu"
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrukce k potvrzení účtu'
+      reset_password_instructions:
+        subject: 'Instrukce k obnovení hesla'
+      unlock_instructions:
+        subject: 'Instrukce k odemčení účtu'
+      reset_password:
+        title: "Dobrý den, %{email}!"
+        description: "Pokud jste zažádali o změnu hesla, provedete j kliknutím na odkaz níže:"
+        link: "Změnit mé heslo"
+        advice: "Pokud jste o změnu hesla nežádali, prosím ignorujte tento e-mail.<br/>
+                 Vaše heslo nebude změněno pokud nekliknete na odkaz výše a nezadáte nové heslo"
+      unlock:
+        title: "Dobrý den, %{email}!"
+        description: "Váš účet byl zablokován kvůli množství nepovedebých přihlášení.<br/>
+                      Klikněte na odkaz níže pro odemčení účtu:"
+        link: "Odemnknout můj účet"
+      confirmations:
+        title: "Vítejte %{email}!"
+        description: "Kliknutím na odkaz níže potvrdíte pravost vaší e-mailové adresy:"
+        link: "Potrvdit účet"
+    sign_out: Odhlásit
+    shared:
+      links:
+        didnt_receive_confirmation_instructions?: "Neobdrželi jste instrukce k potvrzení účtu?"
+        didnt_receive_unlock_instructions?: "Neobdrželi jste instrukce k odemknutí účtu?"

@@ -1,0 +1,58 @@
+.simple_form label {
+  float:left;
+  width: 250px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: right;
+  margin: 2px 10px 0 0;
+}
+
+textarea {
+    background-color: #FFF !important;
+}
+/*
+.simple_form input[type='text'], .simple_form input[type='email'], .simple_form input[type='password']  {
+  float:left;
+  width: 400px;
+  border: 1px solid #DDD;
+  font-size: 20px;
+}
+*/
+.simple_form div.email, .simple_form div.password, .simple_form div.boolean, .simple_form div.string, .simple_form div.file, .simple_form div.select,.simple_form div.time_zone, .simple_form div.text {
+  float:left;
+  clear:left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+.simple_form .error {
+  clear:left;
+  float:left;
+  margin-top: 5px;
+  margin-left: 310px;
+  color:#A11F1D;
+}
+
+.simple_form .hint {
+  float:left;
+  margin-left: 310px;
+  width: 400px;
+  font-size:12px;
+  font-style: italic;
+}
+
+.simple_form .fieldWithErrors {
+  display:inline;
+}
+
+#devise_shared_links {
+  clear:left;
+  float:left;
+}
+
+div.time div.selector {width:45px !important;}
+div.time div.selector span {width:20px !important;}
+div.time div.selector select {width:20px !important;min-width:60px !important;}
+
+div.ui-tabs .ui-tabs-panel{border: none;}

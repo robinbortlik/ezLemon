@@ -1,0 +1,13 @@
+<h1><%= t(".title", :forum => @forum) %></h1>
+<%= link_to t(".new"), new_resource_path, :class => "new-item-link" if user_signed_in? %>
+
+<% if collection.any? %>
+  <ul class="statuses">
+    <%= render(collection) %>
+  </ul>
+  <%= will_paginate %>
+<% else %>
+  <div class="no-objects margin-top">
+    <%= t(".no_objects") %>
+  </div>
+<% end %>

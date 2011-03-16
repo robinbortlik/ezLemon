@@ -1,0 +1,50 @@
+<div class="clearfix">
+  <div id="user-wall-container">
+    <%= flash_messages %>
+    <%= yield %>
+  </div>
+  <div id="user-profile-menu-container">
+    <%= link_to(image_tag(current_user.avatar.url), root_url, :class => 'user-profile-avatar') %>
+    <div id="user-profile-menu">
+      <ul>
+        <li <%= active_class('registrations') %>> <%= link_to icon('vcard') + t('devise.registrations.edit.settings'), edit_user_registration_path %></li>
+        <li <%= active_class('messages') %>>
+          <% if current_user.new_messages_count > 0 %>
+            <%= link_to icon('email') + t('messages.index.title') + " (#{current_user.new_messages_count})", [:messages] %>
+          <% else %>
+            <%= link_to icon('email') + t('messages.index.title'), [:messages] %>
+          <% end %>
+        </li>
+        <li <%= active_class('documents') %>> <%= link_to icon('page-white-acrobat') + t('documents.index.title'), [:documents] %></li>
+        <li <%= active_class('videos') %>> <%= link_to icon('television') + t('videos.index.title'), [:videos] %></li>
+        <li <%= active_class(['forums', 'forum_topics', 'forum_posts']) %>> <%= link_to icon('comments') + t('forums.index.title'), [:forums] %></li>
+        <li <%= active_class('excercises') %>> 
+          <% if current_user.unfinished_excercises_count > 0 %>
+            <%= link_to icon('application-edit') + t('excercises.index.title') + " (#{current_user.unfinished_excercises_count})", [:excercises] %>
+          <% else %>
+            <%= link_to icon('application-edit') + t('excercises.index.title'), [:excercises] %>
+          <% end %>
+        </li>
+        <li> <%= link_to icon('add') + t('excercises.new.title'), [:excercises, :select_type], :remote => true %></li>
+        <li <%= active_class('meetings') %>>
+          <% if current_user.unviewed_meetings_count > 0 %>
+            <%= link_to icon('skype') + t('meetings.index.title') + " (#{current_user.unviewed_meetings_count})", [:meetings] %>
+          <% else %>
+            <%= link_to icon('skype') + t('meetings.index.title'), [:meetings] %>
+          <% end %>
+        </li>
+        <li><%= link_to icon('book-open') + t('translator.index.title'), translator_index_path, :remote => true %></li>
+      </ul>
+      <div>
+        <div class="pupils-teachers-box">
+          <%= link_to t("pupils.index.title"), :pupils %> <br />
+          <%= render :partial => 'users/small_user', :collection => current_user.pupils %>
+        </div>
+        <div class="pupils-teachers-box">
+          <%= link_to t("teachers.index.title"), :teachers %> <br />
+          <%= render :partial => 'users/small_user', :collection => current_user.teachers %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

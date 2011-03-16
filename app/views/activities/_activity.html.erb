@@ -1,0 +1,48 @@
+<li>
+  <%= link_to(image_tag(activity.actor.small_avatar_url, :class => "avatar"), activity.actor) %>
+  <div class='tweetTxt'>
+    <strong>
+      <%= activity_icon(activity) %>
+      <%= link_to(activity.actor, activity.actor) %>
+      <% if activity.subject.class.name == "Comment" %>
+        <%=  t("activity.comment") %>
+
+        <% if activity.subject.commentable.class.name == 'ExcercisesResult' %>
+          <% if current_user == activity.subject.commentable.teacher  %>
+            <%= link_to(activity.subject.commentable, activity.subject.commentable.excercise) %>
+          <% else %>
+            <%= link_to(activity.subject.commentable, [:edit, activity.subject.commentable]) %>
+          <% end %>
+       <% else %>
+          <%= link_to(activity.subject.commentable, activity.subject.commentable) %>
+        <% end %>
+
+      <% elsif activity.subject.class.name == "ExcercisesResult" %>
+        <%= t("activity." + activity.action) %>
+
+        <% if current_user == activity.subject.teacher  %>
+          <%= link_to(activity.subject, activity.subject.excercise) %>
+        <% else %>
+          <%= link_to(activity.subject, [:edit, activity.subject]) %>
+        <% end %>
+
+      <% elsif activity.subject.class.name == "Meeting" %>
+        <%= t("activity." + activity.action) %>
+        <%= link_to(activity.subject, meetings_path(:start => activity.subject.datetime_from.to_i, :end => activity.subject.datetime_to.to_i)) %>
+      <% elsif activity.subject.class.name == "MeetingsUser" %>
+        <%= t("activity." + activity.action) %>
+        <%= link_to(activity.subject.meeting, meetings_path(:start => activity.subject.meeting.datetime_from.to_i, :end => activity.subject.meeting.datetime_to.to_i)) %>
+      <% elsif activity.subject.class.name == "ForumPost" %>
+        <%= t("activity.forum_post") %>
+        <%= link_to(activity.subject.forum_topic, forum_forum_topic_forum_posts_path(activity.subject.forum_topic.forum, activity.subject.forum_topic)) %>
+      <% else %>
+        <%= t("activity." + activity.action) %>
+        <%= link_to(activity.subject, activity.subject) %>
+      <% end %>
+    </strong>
+    <div class='date'>
+      <%= time_ago_in_words(activity.created_at, Time.now) %>
+    </div>
+  </div>
+  <div class='clearfix'></div>
+</li>

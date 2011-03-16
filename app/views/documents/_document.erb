@@ -1,0 +1,5 @@
+<div class="document-container">
+  <%= link_to(image_tag(document.thumbnail_url), document) %><br />
+  <%= document.language %>,
+    <%= l(document.created_at.to_date, :format => :short) %>
+</div>

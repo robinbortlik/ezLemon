@@ -1,0 +1,11 @@
+<h1><%= resource.title %></h1>
+<p class="title-video-info">
+  <%= resource.language %>,
+  <%= resource.creator %>,
+  <%= l(resource.created_at.to_date, :format => :long) %>
+</p>
+<%= simple_format(resource.description, {:class => "document-description"}) %>
+<%= raw resource.display_ipaper %>
+
+
+<%= render :partial => 'comments/comments', :locals => {:commentable => resource} %>

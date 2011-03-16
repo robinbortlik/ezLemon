@@ -1,0 +1,8 @@
+<%% show_for resource do |o| %>
+<% attributes.each do |attribute| -%>
+  <%%= o.<%= attribute.reference? ? :association : :attribute %> :<%= attribute.name %> %>
+<% end -%>
+<%% end %>
+
+<%%= link_to t(:edit), edit_resource_path(resource) %> |
+<%%= link_to t(:back), resource_path %>

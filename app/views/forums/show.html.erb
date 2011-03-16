@@ -1,0 +1,8 @@
+<%= show_for resource do |o| %>
+  <%= o.attribute :title %>
+  <%= o.attribute :description %>
+  <%= o.attribute :last_post_by %>
+  <%= o.attribute :last_post_at %>
+<% end %>
+
+<%= link_to t(:back), collection_path %>

@@ -1,0 +1,25 @@
+$( "#ui-dialog" ).html('<%= escape_javascript(render :partial => 'form') %>')
+$( "#ui-dialog" ).dialog({
+      height: 350,
+      width: 350,
+      title: '<%= t(".title").html_safe %>',
+      close: function(){$('#meeting-calendar').weekCalendar("removeUnsavedEvents");},
+      modal: true,
+      buttons: {
+        <%= t('save') %> : function(){$( "#edit_meeting_<%= @meeting.id %>" ).submit();},
+        <%= t('destroy') %> : function(){
+          if(confirm("<%= t(:confirmation_question) %>")){
+              $.ajax({
+                type: "DELETE",
+                url: "<%= meeting_path(@meeting, :format => :js) %>"
+            });
+            }
+          },
+          <% users = resource.users.where(["users.id <> ?", current_user]).all %>
+          <% if users.any? %>
+            '<%= t('call') %>': function() {window.location.href = "skype:<%= users.collect{|u| u.skype_name}.join(";") %>?call"}
+          <% end %>
+        }
+      });
+$("input:text, textarea, select").uniform();
+$( "#ui-dialog" ).open();

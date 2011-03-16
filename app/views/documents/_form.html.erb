@@ -1,0 +1,13 @@
+<% simple_form_for(resource, :html => {:multipart => true}) do |f| %>
+  <div class="inputs">
+    <%= f.input :title %>
+    <%= f.association :language, :collection => Language.sorted_languages %>
+    <%= f.input :document, :type => :file %>
+    <%= f.input :description, :type => :text, :input_html => {:size => "50x10"} %>
+    <%= f.input :accept_scribd_terms, :as => :boolean , :hint => raw(scribd_hint) %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

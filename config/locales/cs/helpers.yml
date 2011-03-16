@@ -1,0 +1,9 @@
+cs:
+ helpers:
+  submit:
+    create: Vytvořit
+    update: Uložit
+    user:
+      update: Uložit profil
+    message:
+      create: Odeslat

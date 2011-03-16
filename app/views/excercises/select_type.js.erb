@@ -1,0 +1,8 @@
+$( "#ui-dialog" ).html('<%= escape_javascript(render :partial => 'select_type_content') %>')
+$( "#ui-dialog" ).dialog({
+        height: 140,
+        title: '<%= t(".dialog_title").html_safe %>',
+        modal: true
+});
+$( ".new-item-link" ).button();
+$( "#ui-dialog" ).open();

@@ -1,0 +1,9 @@
+en:
+ helpers:
+  submit:
+    create: Create
+    update: Save
+    user:
+      update: Update profile
+    message:
+      create: Send

@@ -1,0 +1,12 @@
+$( "#ui-dialog" ).html('<%= escape_javascript(render :partial => 'form') %>')
+$( "#ui-dialog" ).dialog({
+      height: 150,
+      width: 350,
+      title: '<%= t(".title").html_safe %>',
+      modal: true,
+      close: function(event, ui) { window.location.reload(); }
+  });
+
+languageSelectButtons('teachers-language-form');
+
+$( "#ui-dialog" ).open();

@@ -1,0 +1,10 @@
+<li>
+  <%= link_to(forum_topic.title, [forum_topic.forum, forum_topic, :forum_posts]) %>
+  <% if admin? %>
+    <br />
+    <span class="admin-links">
+      <%= link_to t(:edit), edit_forum_forum_topic_path(forum_topic.forum, forum_topic) %> |
+      <%= link_to t(:destroy), forum_forum_topic_path(forum_topic.forum, forum_topic), :confirm => t(:confirmation_question), :method => :delete %>
+    </span>
+  <% end %>
+</li>

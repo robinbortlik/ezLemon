@@ -1,0 +1,16 @@
+<li>
+  <%= link_to(image_tag(forum_post.creator.small_avatar_url, :class => "avatar"), forum_post.creator) %>
+  <div class='tweetTxt'>
+      <%= simple_format(forum_post.body) %>
+    <div class='date'>
+      <%= l forum_post.created_at.to_date, :format => :short %>
+    </div>
+  </div>
+  <div class='clearfix'></div>
+   <% if admin? %>
+    <span class="admin-links">
+      <%= link_to t(:edit), [:edit, forum_post.forum_topic.forum,forum_post.forum_topic, forum_post] %> |
+      <%= link_to t(:destroy), [forum_post.forum_topic.forum,forum_post.forum_topic, forum_post], :confirm => t(:confirmation_question), :method => :delete %>
+    <% end %>
+  </span>
+</li>

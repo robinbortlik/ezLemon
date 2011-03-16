@@ -1,0 +1,111 @@
+cs:
+  attributes:
+    creator: Vytvořil
+    updater: Upravil
+    created_at: Vytvořeno
+    updated_at: Upraveno
+    language_id: Jazyk
+    language: Jazyk
+    title: Název
+    description: Popis
+    teacher_id: Učitel
+    pupil_id: Žák
+    teacher: Učitel
+    pupil: Žák
+    user: Uživatel
+    
+  activerecord:
+    models:
+      activity: Aktivita uživatele
+      document: Dokument
+      comment: Komentář
+      excercise: Cvičení
+      excercise_result: Výsledky civčení
+      feed_url: RSS zdroj
+      forum_post: Přízpěvek
+      forum_topic: Téma
+      forum: Fórum
+      language: Jazyk
+      learning_language_user: Jazyky, které se učite
+      meeting: Setkání na skype
+      meetings_user: Uživatel na setkání
+      message: Zpráva
+      pupils_teacher: Žák a Učitel
+      teaching_language_user: Jazyky, které vyučujete
+      user: Uživatel
+      video: Video
+
+    attributes:
+      activity:
+        actor: Uživatel
+        subject: Předmět
+        target: Cílový uživatel
+        subject_type: Typ
+        action: Aktivita
+        created_at: Vytvořeno
+      comment:
+        comment: Komentář
+        commentable: Komentovaný záznam
+      document:
+        document_file_name: Název souboru
+        document_content_type: Typ souboru
+        document_file_size: Velikost souboru
+      excercise:
+        text: Text
+        excercise_type: Typ
+        generated: Vygenerováno
+        is_private: Osobní
+        pupils: Žáci
+      excercise_result:
+        excercise_id: Cvičení
+        excercise: Cvičení
+        result: Výsledek
+        is_finished: Splněno
+        mistakes_count: Počet chyb
+      feed_url:
+        url: Url
+      forum_post:
+        body: Obsah
+        forum_topic: Téma
+      forum_topic:
+        forum: Fórum
+      forum:
+        last_post_by: Poslední přízpěvek vložil
+        last_post_at: Poslední přízpěvek
+      language:
+        code: Kód
+      learning_language_user:
+      meeting:
+        datetime_from: Od
+        datetime_to: Do
+        notice: Poznámka
+      meetings_user:
+      message:
+        sender: Odesílatel
+        recipient: Příjemce
+        sender_deleted: Smazáno odesílatelem
+        recipient_deleted: Smazáno příjemcem
+        subject: Předmět
+        body: Obsah
+        read_at: Přečteno
+      pupils_teacher:
+      teaching_language_user:
+      user:
+        email: E-mail
+        sign_in_count: Počet přihlášení
+        name: Jméno
+        skype_name: Skype jméno
+        is_admin: Administrátor
+        interests: O čem rád mluvím
+        avatar: Obrázek profilu
+        application_language_code: Jazyk aplikace
+        password: Heslo
+        new_password: Nové heslo
+        password_confirmation: Potvrzení hesla
+        remember_me: Zůstat přihlášený
+        teaching_languages: Můžu vyučovat
+        learning_languages: Učím se
+        time_zone: Časová zóna
+      video:
+        description: Popis
+        url: Url

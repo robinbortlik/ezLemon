@@ -1,0 +1,12 @@
+cs:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} byl úspěšně vytvořen.'
+      update:
+        notice: '%{resource_name} byl úspěšně upraven.'
+      destroy:
+        notice: '%{resource_name} byl úspěšně smazán.'
+        alert: '%{resource_name} nemohl být smazán.'
+      translate:
+        error: 'Omlouváme se ale překlad se nezdařil. Nejspíše není tato kombinace jazyků dostupná.'

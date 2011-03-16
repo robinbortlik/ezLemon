@@ -1,0 +1,1 @@
+PAPERCLIP_STORAGE_OPTIONS = Rails.env.production? ?  {:path => ":attachment/:id/:style.:extension", :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml", :bucket => "ezlemon_bucket"} : {}

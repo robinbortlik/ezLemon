@@ -1,0 +1,6 @@
+
+<div class="video-container">
+  <%= link_to(image_tag(video.embed_thumbnail_url), video) %><br />
+  <%= video.language %>,
+  <%= l(video.created_at.to_date, :format => :short) %>
+</div>

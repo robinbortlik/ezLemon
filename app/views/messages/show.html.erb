@@ -1,0 +1,7 @@
+<%= show_for resource do |o| %>
+  <%= o.association :sender %>
+  <%= o.attribute :created_at %>
+  <%= o.association :recipient %>
+  <%= o.attribute :subject %>
+  <%= o.attribute :body %>
+<% end %>

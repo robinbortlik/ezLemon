@@ -1,0 +1,25 @@
+<% title; description %>
+<div class="clearfix" style="margin-top:10px;">
+<div class="float-left" style="width:25%;">
+  <%= image_tag('robin_bortlik.jpg')   %>
+  <ul>
+    <li><%= link_to(t(".facebook"), "http://www.facebook.com/pages/ezLemon/333707708241?ref=ts", :title => t(".facebook_title"))  %></li>
+    <li><%= link_to(t(".twitter"), "http://twitter.com/ezlemon", :title => t(".twitter"))  %></li>
+    <li><%= mail_to("info@ezlemon.com", t('.email'), :encode => "javascript", :title => t(".email")).html_safe %></li>
+  </ul>
+</div>
+<div class="float-left" style="width:75%;">
+  <h2><%= t(".about_robin_headline") %></h2>
+  <p>
+    <%= t(".about_robin_text",
+      :czech_republic => link_to(t(".czech_republic"), 'http://www.czech.cz/', :title => t(".czech_republic"), :target => '_blank'),
+      :hubert_frey => link_to('Hubert Frey', 'http://www.hubertfrey.cz/', :title => 'Hubert Frey',:target => '_blank'),
+      :tomas_pavelka => link_to('Tomáš Pavelka', 'http://www.tomaspavelka.cz', :title => 'Tomáš Pavelka',:target => '_blank'),
+      :martin_hladil => link_to('Martin Hladil', 'http://www.hladil.name', :title => 'Martin Hladil',:target => '_blank'),
+      :roman_ozana => link_to('Roman Ožana', 'http://www.nabito.net/', :title => 'Roman Ožana',:target => '_blank'),
+      :railsformers => link_to('Railsformers', 'http://www.railsformers.com', :title => 'Railsformers',:target => '_blank'),
+      :omdesign => link_to('Omdesign', 'http://www.omdesign.cz/', :title => 'Omdesign',:target => '_blank')
+    ).html_safe %>
+  </p>
+</div>
+</div>

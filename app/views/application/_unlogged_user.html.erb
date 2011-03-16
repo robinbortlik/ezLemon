@@ -1,0 +1,91 @@
+<div id="home-content">
+  <div id="home-head">
+    <h1><%= t(".we_will_help_you") %><span><%= t(".to_understand_world") %></span></h1>
+    <p>
+      <%= t('.application_description').html_safe %>
+    </p>
+    <p class="more"><%= link_to t("devise.registrations.new.sign_up"), new_user_registration_path %></p>
+    <div class="peoples"></div>
+  </div><!-- #home-head -->
+  <ul class="under-head-text">
+    <li>
+      <h2><strong><%= t(".box1.title") %></strong></h2>
+      <p>
+        <%= link_to(icon('user-comment') + t(".community"),  "#") %><br />
+        <%= t(".box1.community_text") %>
+      </p>
+      <p>
+        <%= link_to(icon('comments') + t("comments"),  "#") %><br />
+        <%= t(".box1.comment_text") %>
+      </p>
+    </li>
+    <li>
+      <h2><strong><%= t(".box2.title") %></strong></h2>
+      <p>
+        <%= link_to(icon('television') + t("videos.index.title"),  "#") %><br />
+        <%= t(".box2.video_text") %>
+      </p>
+      <p>
+        <%= link_to(icon('page-white-acrobat') + t("documents.index.title"),  "#") %><br />
+        <%= t(".box2.document_text") %>
+      </p>
+    </li>
+    <li>
+      <h2><strong><%= t(".box3.title") %></strong></h2>
+      <p>
+        <%= link_to(icon('lightbulb') + t("excercises.index.title"),  "#") %><br />
+        <%= t(".box3.excercise_text") %>
+      </p>
+      <p>
+        <%= link_to(icon('skype') + t(".skype_meetings"),  "#") %><br />
+        <%= t(".box3.skype_meeting_text") %>
+      </p>
+    </li>
+  </ul><!-- .under-head-text -->
+  <div id="sections">
+    <div class="section">
+      <h2><strong><%= t(".who_support_us") %></strong></h2>
+      <div id="slider">
+        <ul>
+          <li>
+            <%= link_to(image_tag("supported/slezska.univerzita.gif", :alt => t('.silesian_university')), "http://www.slu.cz/", :title => t('.silesian_university'), :"data-popup" => true) %>
+          </li>
+          <li>
+            <%= link_to(image_tag("supported/railsformers.png", :alt => "Railsformers"), "http://www.railsformers.com/", :title => "Railsformers", :"data-popup" => true) %>
+          </li>
+        </ul>
+      </div>
+    </div><!-- .section -->
+    <div class="section">
+      <h2><strong><%= t(".which_languages") %></strong></h2>
+      <% tlu_array = TeachingLanguageUser.select("language_id, COUNT(language_id) as language_count").group(:language_id).includes(:language).order("language_count DESC").limit(10).all %>
+      <p id="languages-list">
+        <% tlu_sum = tlu_array.sum{|tlu| tlu.language_count.to_i} %>
+        <% tlu_array.each do |tlu| %>
+          <span style="font-size:<%= (tlu.language_count.to_f/tlu_sum *100).round + 100 %>%"> <%= tlu.language %></span>&nbsp;&nbsp;
+        <% end %>
+              </p>
+              </div><!-- .section -->
+              <div class="section">
+              <h2><strong><%= t('.latest_activity') %></strong></h2>
+          <ul class="statuses">
+            <%= render :partial => 'activities/activity_home_page', :collection => @activities %>
+          </ul>
+          <%= link_to t(".more"), latest_activity_path, :class => "more" %>
+    </div><!-- .section -->
+  </div><!-- #sections -->
+</div>
+
+<%= javascript_include_tag "easy_slider.js"  %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#slider").easySlider({
+      auto: true,
+      continuous: true,
+      speed: 2800,
+      pause: 5000,
+      controlsShow: false
+    });
+  });
+</script>

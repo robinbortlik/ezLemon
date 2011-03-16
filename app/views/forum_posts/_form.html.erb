@@ -1,0 +1,9 @@
+<% simple_form_for([resource.forum_topic.forum, resource.forum_topic, resource]) do |f| %>
+  <div class="inputs">
+    <%= f.input :body, :type => :text, :input_html => {:size => "50x20"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

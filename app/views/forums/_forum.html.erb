@@ -1,0 +1,12 @@
+
+<div class="forum-container">
+  <%= link_to(forum.title, forum_forum_topics_path(forum), :class => 'forum-title') %><br />
+  <%= Language.language_name_from_code(forum.title) %>
+  <% if admin? %>
+    <br />
+    <span class="admin-links">
+      <%= link_to t(:edit), edit_forum_path(forum) %> |
+      <%= link_to t(:destroy), forum_path(forum), :confirm => t(:confirmation_question), :method => :delete %>
+    </span>
+  <% end %>
+</div>

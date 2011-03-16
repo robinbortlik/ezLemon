@@ -1,0 +1,38 @@
+<ul class="statuses">
+  <%= render @activities %>
+</ul>
+<%= will_paginate @activities %>
+
+<%= javascript_include_tag("jquery.slidenote.min") %>
+
+<% if current_user.skype_name.blank? || !current_user.teaching_languages.any? || !current_user.learning_languages.any? || !current_user.teachers.any? || !current_user.pupils.any?%>
+  <div class="slidenote">
+    <h3><%= t('.slidenote.title') %></h3>
+    <ol>
+      <% if current_user.skype_name.blank? %>
+        <li><%= link_to(t('.slidenote.fill_name'), edit_user_registration_path) %></li>
+      <% end %>
+      <% unless current_user.teaching_languages.any? %>
+        <li><%= link_to(t(".slidenote.fill_teaching_languages"), edit_user_registration_path(:tab => "1")) %></li>
+      <% end %>
+      <% unless current_user.learning_languages.any? %>
+        <li><%= link_to(t(".slidenote.fill_learning_languages"),  edit_user_registration_path(:tab => "1")) %></li>
+      <% end %>
+      <% unless current_user.teachers.any? %>
+        <li><%= link_to(t(".slidenote.fill_teachers"), teachers_path) %></li>
+      <% end %>
+      <% unless current_user.pupils.any? %>
+        <li><%= link_to(t(".slidenote.fill_pupils"), pupils_path) %></li>
+      <% end %>
+    </ol>
+  </div>
+  <script type="text/javascript">
+    $('.slidenote').slideNote({
+      where:0,
+      corner: 'right',
+      closeImage: 'images/icons/slidenote.close.png',
+      displayCount: 1
+    });
+    $('.slidenote').trigger('slideIn')
+  </script>
+<% end %>

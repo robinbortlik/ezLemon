@@ -1,0 +1,11 @@
+<%= simple_form_for(@comment || commentable.comments.new,  :remote => true) do |f| %>
+  <div class="inputs">
+    <%= f.input :comment, :input_html => {:size => "80x3"}, :label => "" %>
+    <%= f.hidden_field :commentable_type %>
+    <%= f.hidden_field :commentable_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

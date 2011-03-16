@@ -1,0 +1,18 @@
+<% title; description %>
+<h2><%= t(".title") %></h2>
+<p><%= t(".text").html_safe %></p>
+<div class="wall-of-fame clearfix">
+  <div class="fame-item">
+    <%= link_to(image_tag("supported/slezska.univerzita.gif", :alt => t('application.unlogged_user.silesian_university')), "http://www.slu.cz/", :title => t('application.unlogged_user.silesian_university'), :"data-popup" => true) %>
+    <p><%= t('application.unlogged_user.silesian_university') %></p>
+  </div>
+</div>
+<br /><br />
+<div class="wall-of-fame clearfix">
+  <% @users.each do |user|  %>
+    <div class="fame-item">
+      <%= image_tag user.avatar.url, :title => user, :alt => user %>
+      <p><%= user %></p>
+    </div>
+  <% end %>
+</div>

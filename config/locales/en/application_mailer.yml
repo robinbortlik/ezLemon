@@ -1,0 +1,16 @@
+en:
+  application_mailer:
+    hello: Hello student,
+    new_message:
+      subject: New private message
+      text: "you have a new private message in your inbox. <br /> <br /> You can read the message on url:"
+    new_meeting:
+      subject: New skype meeting
+      text: "some user created skype meeting which is available for you. <br /> <br /> If you are interested, look for details on url:"
+    new_excercise:
+      subject: New excercise
+      text: "some user create a excercise fo you. <br /> <br /> You can pass this excercise on url:"
+    new_excercise_comment:
+      subject: New comment on your excercise
+      text: "some user wrote a comment on your excercise. <br /> <br /> You can read it on url:"
+

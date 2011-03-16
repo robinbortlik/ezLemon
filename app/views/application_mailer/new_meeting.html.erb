@@ -1,0 +1,4 @@
+<p style="margin:0;">
+  <%= t(".text").html_safe %>
+  <%= meetings_url(:start => @meeting.datetime_from, :end => @meeting.datetime_to) %>
+</p>

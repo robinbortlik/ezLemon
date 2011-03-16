@@ -1,0 +1,32 @@
+<li>
+  <%= image_tag(activity_home_page.actor.small_avatar_url, :class => "avatar", :title => activity_home_page.actor) %>
+  <div class='tweetTxt'>
+    <strong>
+      <%= activity_icon(activity_home_page) %>
+      <%= activity_home_page.actor %>
+      <% if activity_home_page.subject.class.name == "Comment" %>
+        <%=  t("activity.comment") %>
+        <%= activity_home_page.subject.commentable %>
+      <% elsif activity_home_page.subject.class.name == "ExcercisesResult" %>
+        <%= t("activity." + activity_home_page.action) %>
+        <%= activity_home_page.subject %>
+      <% elsif activity_home_page.subject.class.name == "Meeting" %>
+        <%= t("activity." + activity_home_page.action) %>
+        <%= activity_home_page.subject.to_s(:time) %>
+      <% elsif activity_home_page.subject.class.name == "MeetingsUser" %>
+        <%= t("activity." + activity_home_page.action) %>
+        <%= activity_home_page.subject.meeting.to_s(:time) %>
+      <% elsif activity_home_page.subject.class.name == "ForumPost" %>
+        <%= t("activity.forum_post") %>
+        <%= activity_home_page.subject.forum_topic %>
+      <% else %>
+        <%= t("activity." + activity_home_page.action) %>
+        <%= activity_home_page.subject %>
+      <% end %>
+    </strong>
+    <div class='date'>
+      <%= time_ago_in_words(activity_home_page.created_at, Time.now) %>
+    </div>
+  </div>
+  <div class='clearfix'></div>
+</li>

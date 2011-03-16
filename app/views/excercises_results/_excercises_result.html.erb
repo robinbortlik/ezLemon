@@ -1,0 +1,19 @@
+<li>
+  <div class='toggle clearfix'>
+    <%= image_tag(excercises_result.pupil.small_avatar_url, :class => "avatar float-left")  %>
+    <div class='tweetTxt'>
+      <strong>
+        <%= excercises_result.pupil %>
+        <% if excercises_result.mistakes_count  %>
+          <br /><%= t('.mistakes') %>: <%= excercises_result.mistakes_count %>
+        <% end %>
+      </strong>
+    </div>
+  </div>
+  <div class='excercise-result clearfix hidden'>
+    <% unless excercises_result.result.blank? %>
+      <%= CGI.unescapeHTML(excercises_result.result).html_safe %>
+      <%= render :partial => 'comments/comments', :locals => {:commentable => excercises_result} %>
+    <% end %>
+  </div>
+</li>

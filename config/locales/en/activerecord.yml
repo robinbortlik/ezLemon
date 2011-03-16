@@ -1,0 +1,105 @@
+en:
+  attributes:
+    creator: Creator
+    updater: Updater
+    created_at: Created at
+    updated_at: Updated at
+    language_id: Language
+    language: Language
+    title: Title
+    description: Description
+    teacher_id: Teacher
+    pupil_id: Pupil
+    teacher: Teacher
+    pupil: Pupil
+    user: User
+    
+  activerecord:
+    models:
+      activity: User activity
+      document: Document
+      comment: Comment
+      excercise: Excercise
+      excercise_result: Result of excercise
+      feed_url: Feed url
+      forum_post: Post
+      forum_topic: Topic
+      forum: Forum
+      language: Language
+      learning_language_user: Languages you are learning
+      meeting: Skype meeting
+      meetings_user: Meetings user
+      message: Message
+      pupils_teacher: Pupil and Teacher
+      teaching_language_user: Languages you are teaching
+      user: User
+      video: Video
+
+    attributes:
+      activity:
+        actor: Actor
+        subject: Subject
+        target: Target
+        subject_type: Subject type
+        action: Action
+        created_at: Created at
+      comment:
+        comment: Comment
+        commentable: Commentable
+      document:
+        document_file_name: File name
+        document_content_type: Content type
+        document_file_size: File size
+      excercise:
+        text: Text
+        excercise_type: Type
+        generated: Generated
+        is_private: Private
+      excercise_result:
+        excercise_id: Excercise
+        excercise: Excercise
+        result: Result
+        is_finished: Finished
+        mistakes_count: Count of mistakes
+      feed_url:
+        url: Url
+      forum_post:
+        body: Content
+        forum_topic: Forum topic
+      forum_topic:
+        title: Title
+        forum: Forum
+      forum:
+        last_post_by: Last post by
+        last_post_at: Last post at
+      language:
+        code: Code
+      learning_language_user:
+      meeting:
+        datetime_from: From
+        datetime_to: To
+        notice: Notice
+      meetings_user:
+      message:
+        sender: Sender
+        recipient: Recipient
+        sender_deleted: Deleted by sender
+        recipient_deleted: Deleted by recipient
+        subject: Subject
+        body: Content
+        read_at: Read at
+      pupils_teacher:
+      teaching_language_user:
+      user:
+        email: Email
+        sign_in_count: Sign in count
+        interests: Want to speak about
+        name: Name
+        skype_name: Skype name
+        is_admin: Is admin
+        avatar: Profile picture
+        application_language_code: Localization
+        time_zone: Time Zone
+      video:
+        description: Description
+        url: Url

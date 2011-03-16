@@ -1,0 +1,230 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cs:
+  
+  back: Zpět
+  confirmation_question: Jste si jist?
+  comments: Komentáře
+  destroy: Smazat
+  edit: Upravit
+  new: Nový
+  pupils: Žáci
+  teachers: Učitelé
+  scribd_terms: Licenční podminky služby Scribd
+  scribd_policity: a jejich politika
+  show: Zobrazit
+  cancel: Zrušit
+  save: Uložit
+  call: Volat na Skype
+  who_will_come: Kdo bude přítomen
+
+
+  layouts:
+    application:
+      logo_title: "ezLemon"
+
+  application:
+    index:
+      title: ezLemon
+      head_title: "Aktivní výuka cizích jazyků"
+      meta_description: "ezLemon je internetová aplikace, která Vám umožní učit se cizí jazyky aktivně, přímo s rodilými mluvčími. "
+    unlogged_user:
+      box1:
+        title: Síla komunity
+        community_text: Hledáte radu jak se efektivně učit cizí jazyky? Zkuste naše fórum.
+        comment_text: Můžete psát komentáře k videím a dokumentům a pomoci tak tvůrcům se zdokonalit.
+      box2:
+        title: Studijní zdroje
+        video_text: Vyučujte někoho skrze video, nebo sami nějaké shlédněte.
+        document_text: Nerozumíte nějaké gramtice? Zkuste hledat v naších dokumentech.
+      box3:
+        title: Aktivní výuka
+        excercise_text: Vyzkoušejte naše cvičení a ověřte si své jazykové znalosti.
+        skype_meeting_text: Nejlepší způsob, jak se učit cizí jazyky je mluvit. Vyzkoušejte to, je to zdarma.
+      we_will_help_you: Pomůžeme ti
+      to_understand_world: porozumět celému světu
+      masaryk_university: Masarykova univerzita
+      silesian_university: Slezská univerzita
+      latest_activity: Poslední aktivita
+      more: více
+      who_support_us: Kdo nás podpořil?
+      application_description: <strong>ezLemon</strong> je internetová aplikace, která Vám umožní <strong>učit se cizí jazyky aktivně, přímo s rodilými mluvčími</strong>.
+      community: Fóra
+      skype_meetings: Skype komunikace
+      which_languages: Které jazyky se těď učí?
+    logged_user:
+      slidenote:
+        title: "Ahoj, aby jsi mohl využívat aplikaci na maximum, je ještě potřeba:"
+        fill_name: "Zadat své skype jméno"
+        fill_teaching_languages: Zadat jazyky, které můžeš naučit ostatní
+        fill_learning_languages: Zadat jazyky které se chceš učit
+        fill_pupils: Vybrat si své žáky
+        fill_teachers: Vybrat si své učitele
+
+    about_project:
+        title: O projektu
+        facebook: Facebook
+        facebook_title: Facebook page
+        email: E-mail
+        twitter: Twitter
+        about_robin_headline: Ahoj všichni
+        about_robin_text: "Jmenuji se <strong>Robin Bortlík</strong> a pocházím z <strong>%{czech_republic}</strong>
+        <br />
+        ezLemon je má <strong>bakalářská práce</strong>, která Vám může pomoci <strong>učit se cizí jazyky snadněji</strong>.<br />
+        Jednoduše můžete hovořit s lidmi z cizí země pomocí Skype, nebo někoho vyučovat pomocí naších cvičení.<br />
+        Pokud nehledáte nikoho, kdo by se s Vámi učil, můžete jednosuše jenom studovat dokumenty nebo sledovat náučná videa.<br />
+        Poslední věc, kterou bych Vám chtěl říct je: <strong>Užíjte si to</strong>.<br />
+        <br />
+        Touto cestou bych chtěl zvláště poděkovat za podporu při vývoji <strong>Klárce</strong>, mé <strong>rodině</strong>, mým <strong>přátelům</strong> %{hubert_frey}, %{tomas_pavelka}, %{martin_hladil}, %{roman_ozana}, Ivo Slavík, Marek Polášek a společnostem %{railsformers}, %{omdesign}"
+        czech_republic: České Republiky
+        meta_description: "Popis vzniku projektu ezLemon"
+    latest_activity:
+      title: Poslední aktivita
+      meta_description: "Poslední aktivita uživatelů v aplikaci ezLemon"
+    wall_of_fame:
+      title: Stěna slávy
+      text: Tato stránka slouží jako poděkování všem, kteří nějakým způsobem pomohli k zlepšení této aplikace. <br /> Nenašli jste se? <br /> Zkuste nám poslat nějaký svůj nápad, nebo připomínku a dopomozte tak ke zvalitnění. Rádi Vás sem potom umístíme.
+      meta_description: "Poděkování všem uživatelům, kteří pomohli vylepšit projekt ezLemon"
+
+  activity:
+    create: vytvořil
+    comment: Komentář
+    update: upravil
+    forum_post: přispěl do 
+    
+  documents:
+    index:
+      title: Dokumenty
+      new: Přidat dokumet
+      no_objects: Pro Váš jazyk zde není žádný dokument
+    new:
+      title: Nový dokument
+
+  excercises:
+    index:
+      title: Cvičení
+      new: Vytvořit cvičení
+      no_objects: Ještě jste nevytvořili žádné cvičení
+    new:
+      title: Nové cvičení
+    edit:
+      title: Upravit cvičení
+    form:
+      preview: Jak bude cvičení vypadat?
+    show:
+      results: Výsledky uživatelů
+    select_type:
+      dialog_title: Vyberte typ cvičení
+    select_type_content:
+      question: Pro koho je cvičení určeno?
+      private: Pro mne
+      for_pupils: Pro mé žáky
+    move_word: "Přesuňte tyto slova na správné místo: "
+    types:
+      "1": Doplňování mezer
+      "2": Překlad
+
+  excercises_results:
+    edit:
+      title: Výsledky
+      reload_excercise: Vyzkoušet znovu
+      mistakes: Počet chyb
+    excercises_result:
+      mistakes: Počet chyb
+  forums:
+    index:
+      title: Fóra
+      new: Vytvořit fórum
+    new:
+      title: Nové fórum
+    edit:
+      title: Úprava fóra
+
+  forum_topics:
+    index:
+      title: Témata fóra %{forum}
+      new: Přidat téma
+      no_objects: Toto fórum neobsahuje žádná témata
+    new:
+      title: Nové téma
+    edit:
+      title: Úprava tématu
+
+  forum_posts:
+    index:
+      title: Příspěvky
+      new: Vložit příspěvek
+      no_objects: Toto téma neobsahuje žádné zprávy
+    new:
+      title: Nový příspěvek
+    edit:
+      title: Editace příspěvku
+
+  meetings:
+    index:
+      title: Skype setkání
+      today: Dnes
+      new_event: Nové setkání na Skype
+    new:
+      title: Vytvořit setkání
+    edit:
+      title: Úprava detailů setkání
+    show:
+      title: Podrobnosti skype setkání
+      attending: Příjdu
+      not_attending: Nepříjdu
+      
+  messages:
+    index:
+      title: Zprávy
+    inbox:
+      title: Přijaté
+      no_messages: Nemáte žádné zprávy
+      compose: Vytvořit zprávu
+    sent:
+      title: Odeslané
+      no_messages: Zatím jste nic neposlal
+    new:
+      title: Nová zpráva
+
+  pupils:
+    index:
+      title: Žáci
+      sentence_1: Žáci, kteří se chtějí učit jazyky
+      like_speak: "Rád hovoří o: "
+      no_objects: Nebyl nalezen žádný žák, který by vyhovoval Vašemu jazykovému nastavení
+    form:
+      destroy_confirm: Jste si jist, že již nechcete toho žáka vyučovat?
+      select_language: Vyberte jazyky, které chcete uživatele učit
+    languages:
+      title: Jazyky, které můžu uživatele vyučovat
+
+  teachers:
+    index:
+      title: Učitelé
+      sentence_1: Učitelé kteří vyučují jazyky
+      like_speak: "Rád hovoří o: "
+      no_objects: Nebyl nalezen žádný učitel, který by vyhovoval Vašemu jazykovému nastavení
+    form:
+      destroy_confirm: Jste si jist, že již nechcete být žákem?
+      select_language: Vyberte si jazyky, které se chcete s uživatelem učit
+    languages:
+      title: Jazyky, které se můžu učit
+
+  translator:
+    index:
+      title: Slovník
+    form:
+      translation: Překlad
+      submit: Přeložit
+
+  videos:
+    index:
+      title: Videa
+      new: Vložit video
+      no_objects: Nebylo nalezeno žádné video
+    new:
+      title: Nové video
+    form:
+      video_url: Adresa z Youtube nebo Vimeo

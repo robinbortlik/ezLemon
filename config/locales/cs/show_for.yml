@@ -1,0 +1,5 @@
+cs:
+  show_for:
+    blank: "Neurčeno"
+    "yes": "Ano"
+    "no": "Ne"

@@ -1,0 +1,1 @@
+<%= @meetings.map{|m| {:id => m.id, :start => m.datetime_from, :end => m.datetime_to, :title => m.notice, :readOnly => m.readonly_meeting?(current_user)}}.to_json.html_safe %>

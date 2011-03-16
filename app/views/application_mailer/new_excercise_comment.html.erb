@@ -1,0 +1,8 @@
+<p style="margin:0;">
+  <%= t(".text").html_safe %>
+  <% if @user == @excercises_result.pupil %>
+    <%= edit_excercises_result_url(@excercises_result) %>
+  <% else %>
+    <%= excercise_url(@excercises_result.excercise) %>
+  <% end %>
+</p>

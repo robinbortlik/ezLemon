@@ -1,0 +1,12 @@
+<h2><%= resource %></h2>
+<%= show_for resource do |o| %>
+  <%= image_tag(o.object.avatar.url) %>
+  <%= o.association :teaching_languages do |lang| %>
+    <%= lang %>
+  <% end %>
+  <%= o.association :learning_languages do |lang| %>
+    <%= lang %>
+  <% end %>
+  <%= o.attribute :interests  %>
+<% end %>
+<%= skype_button(resource) %>

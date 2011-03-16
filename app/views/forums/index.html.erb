@@ -1,0 +1,12 @@
+<h1><%= t(".title") %></h1>
+<%= link_to t(".new"), new_resource_path, :class => "new-item-link" if admin? %>
+
+<ul class="forum-list">
+  <% collection.each_slice(3) do |forums| %>
+    <li class="clearfix">
+      <%= render(forums) %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= will_paginate %>

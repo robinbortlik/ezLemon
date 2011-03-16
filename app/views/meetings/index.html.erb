@@ -1,0 +1,82 @@
+<h1><%= t(".title") %></h1>
+
+<br />
+
+<div id="meeting-calendar" class="clearfix"></div>
+
+<%= javascript_include_tag("jquery.weekcalendar", "date") %>
+<%= stylesheet_link_tag("jquery.weekcalendar") %>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#meeting-calendar').weekCalendar({
+      firstDayOfWeek: <%= t("date.first_day_of_week") %>,
+      longDays: [<%= t("date.day_names").collect{|dn| "'#{dn}'"}.join(",") %>],
+      shortMonths: "[<%= t("date.abbr_month_names")[1..12].collect{|mn| "'#{mn}'"}.join(",") %>]",
+      newEventText: '<%= t(".new_event") %>',
+      buttonText: {today:'<%= t(".today") %>'},
+      use24Hour: <%= t("time.use_24_hours") %>,
+      timeFormat: '<%= t("time.formats.event_time") %>',
+      timeSeparator: "<%= t("time.separator") %>",
+      height: function(){return 700},
+      eventNew : function(calEvent, $event) {
+        $.ajax({
+          type: "GET",
+          url: "<%= new_meeting_path(:format => :js) %>",
+          data: eventTimeToParam(calEvent.start, "datetime_from") + "&" + eventTimeToParam(calEvent.end, "datetime_to")
+        });
+      },
+      eventDrop : function(calEvent, $event) {
+        $.ajax({
+          type: "PUT",
+          url: "<%= meetings_path %>" + "/" + calEvent.id + ".js",
+          data: eventTimeToParam(calEvent.start, "datetime_from") + "&" + eventTimeToParam(calEvent.end, "datetime_to")
+        });
+      },
+      eventResize : function(calEvent, $event) {
+      
+        $.ajax({
+          type: "PUT",
+          url: "<%= meetings_path %>" + "/" + calEvent.id + ".js",
+          data: eventTimeToParam(calEvent.start, "datetime_from") + "&" + eventTimeToParam(calEvent.end, "datetime_to")
+        });
+      },
+      eventClick : function(calEvent, $event) {
+        if (calEvent.readOnly){
+          $.ajax({
+            type: "GET",
+            url: "<%= meetings_path %>" + "/" + calEvent.id + ".js"
+          })
+        }
+        else{
+          $.ajax({
+            type: "GET",
+            url: "<%= meetings_path %>" + "/" + calEvent.id + "/edit.js"
+          });
+        }
+      },
+      eventMouseover : function(calEvent, $event) {
+        
+      },
+      eventMouseout : function(calEvent, $event) {
+        /*$( "#ui-dialog" ).dialog('close');*/
+      },
+      noEvents : function() {
+        /*alert("There are no events for this week");*/
+      },
+      data:"<%= meetings_path(:format => :json) %>"
+    });
+  });
+
+  function eventTimeToParam(time, param){
+   tmp = ""
+   tmp += "meeting[" + param + "(1i)]="+ time.getFullYear()
+   tmp += "&meeting[" + param + "(2i)]="+ (time.getMonth() +1)
+   tmp += "&meeting[" + param + "(3i)]="+ time.getDate()
+   tmp += "&meeting[" + param + "(4i)]="+ time.getHours()
+   tmp += "&meeting[" + param + "(5i)]="+ time.getMinutes()
+   return tmp
+  }
+</script>
+

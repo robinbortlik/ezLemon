@@ -1,0 +1,24 @@
+<%= show_for resource do |o| %>
+  <%= o.association :language %>
+  <%= o.attribute :excercise_type do %>
+    <%= t(resource.excercise_type.to_s, :scope => [:excercises, :types]) %>
+  <% end %>
+  <%= o.attribute :text do %>
+    <%= CGI.unescapeHTML(resource.text).html_safe %>
+  <% end %>
+<% end %>
+
+<strong><%= t(".results") %></strong>
+<ul class="statuses">
+  <%= render resource.excercises_results %>
+</ul>
+
+<%= link_to t(:back), collection_path %>
+
+
+<script type="text/javascript">
+  $('.toggle').live('click', function(){
+    $(this).next('.excercise-result').toggle();
+  }
+)
+</script>

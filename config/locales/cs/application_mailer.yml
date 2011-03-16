@@ -1,0 +1,15 @@
+cs:
+  application_mailer:
+    hello: Ahoj studente,
+    new_message:
+      subject: Nová soukromá zpráva
+      text: "do tvé schránky přisla nová soukromá zpráva. <br /> <br /> Přečíst si ji můžeš na adrese:"
+    new_meeting:
+      subject: Nové setkání na skype
+      text: "bylo vytvořeno nové setkání na skype, kterého se můžeš zúčasnit. <br /> <br /> Máš-li zájem, přihlaš se na adrese:"
+    new_excercise:
+      subject: Nové cvičení
+      text: "bylo pro tebe vytvořeno nové cvičení. <br /> <br /> Splnit ho můžeš na adrese:"
+    new_excercise_comment:
+      subject: Nový komentář ke tvému cvičení
+      text: "ke tvému cvičení byl napsán nový komentář. <br /> <br /> Přečíst si jej můžeš na adrese:"

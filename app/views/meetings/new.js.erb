@@ -1,0 +1,14 @@
+$( "#ui-dialog" ).html('<%= escape_javascript(render :partial => 'form') %>')
+$( "#ui-dialog" ).dialog({
+      height: 250,
+      width: 350,
+      title: '<%= t(".title").html_safe %>',
+      close: function(){$('#meeting-calendar').weekCalendar("removeUnsavedEvents");},
+      modal: true,
+      buttons: {
+        '<%= t(:cancel) %>' : function(){ $( "#ui-dialog" ).dialog('close'); },
+        '<%= t(:save) %>' : function(){$( "#new_meeting" ).submit();}
+        }
+      });
+$("input:text, textarea, select").uniform();
+$( "#ui-dialog" ).open();

@@ -1,0 +1,36 @@
+<h1><%= t(".title") %></h1>
+<br />
+<h2><%= t(".sentence_1") %> <%= current_user.learning_languages.join(", ") %></h2>
+
+<% if collection.any? %>
+  <ul class="statuses pupils-teachers">
+    <% collection.each do |resource| %>
+    <% active = current_user.pupils_teachers.where({:teacher_id => resource}).exists? %>
+    <li id="user-<%= resource.id %>" class="<%= 'active' if active %>">
+        <%= link_to(image_tag(resource.avatar.url), resource, :title => resource) %>
+        <div class='tweetTxt'>
+          <strong>
+            <%= resource %>
+          </strong>
+          <%= simple_format(t(".like_speak") + resource.interests) unless resource.interests.blank? %>
+        </div>
+        <div class='clearfix'></div>
+      </li>
+    <% end %>
+  </ul>
+  <%= will_paginate %>
+<% else %>
+  <div class="no-objects margin-top">
+    <%= t(".no_objects") %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('ul.statuses > li').click(function(){
+    $.ajax({
+      url: "teachers/" + $(this).attr("id").replace("user-", "") + "/languages.js",
+      type: "GET"
+    })
+  }
+)
+</script>

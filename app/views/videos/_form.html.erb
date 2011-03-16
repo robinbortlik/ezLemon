@@ -1,0 +1,10 @@
+<% simple_form_for(resource) do |f| %>
+  <div class="inputs">
+    <%= f.input :url, :as => :string, :hint => t(".video_url") %>
+    <%= f.association :language, :collection => Language.sorted_languages %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

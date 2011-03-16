@@ -1,0 +1,7 @@
+<% title("head_title"); description %>
+
+<% if user_signed_in?  %>
+    <%= render :partial => 'logged_user' %>
+<% else %>
+    <%= render :partial => 'unlogged_user' %>
+<% end %>

@@ -1,0 +1,19 @@
+$('#ui-dialog').html('<%= escape_javascript render(:partial => 'show') %>')
+$( "#ui-dialog" ).dialog({
+    height: 250,
+    width: 350,
+    title: '<%= t(".title").html_safe %>',
+    buttons: {
+      <% if meetings_user = resource.meetings_users.where(:user_id => current_user).first %>
+       '<%= t('.not_attending') %>': function(){
+              $.ajax({type: "DELETE", url: '<%= meeting_meetings_user_path(resource, meetings_user) %>' })
+          }
+        <% else %>
+        '<%= t('.attending') %>': function(){
+            $.ajax({type: "POST", url: '<%= meeting_meetings_users_path(resource) %>' })
+        }
+       <% end %>
+     }
+    
+  });
+$( "#ui-dialog" ).dialog('open');

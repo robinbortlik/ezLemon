@@ -1,0 +1,11 @@
+<% simple_form_for(resource) do |f| %>
+  <div class="inputs">
+    <%= f.association :recipient, :collection => (current_user.pupils + current_user.teachers).uniq, :label_method => "to_s" %>
+    <%= f.input :subject %>
+    <%= f.input :body, :type => :text, :input_html => {:size => "50x10"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
